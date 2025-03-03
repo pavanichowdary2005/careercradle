@@ -1,27 +1,27 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Header from "./components/layout/Header";
-import Footer from "./components/layout/Footer";
-import Index from "./components/layout/Index";
-//import "./components/styles/Footer.css";
-//import "./components/styles/Header.css";
-// import "./components/styles/Index.css";
-import "./App.css";
+import Header from "./components/Layout/Header.jsx";
+import Footer from "./components/Layout/Footer.jsx";
+import Home from "./components/pages/Home";
+import About from "./components/pages/About";
+import Login from "./components/pages/Login";
+import Register from "./components/pages/Register";
 
-const App = () => {
+function App() {
   return (
     <Router>
-      <div className="app-container">
-        <Header />
-        <main className="content">
-          <Routes>
-            <Route path="/" element={<Index />} />
-          </Routes>
-        </main>
-        <Footer />
+      <Header />
+      <div className="content">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+        </Routes>
       </div>
+      <Footer />
     </Router>
   );
-};
+}
 
 export default App;
